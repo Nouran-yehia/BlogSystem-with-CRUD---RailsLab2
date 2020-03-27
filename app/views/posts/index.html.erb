@@ -1,0 +1,13 @@
+<% @posts.each do |post| %>
+<div class="card" style="text-align:center; margin:auto; border:1px solid gray; width:50%;">
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <p class="card-text"><%= post.content %></p>
+    <div style="margin:5px;"><a href="<%= edit_post_path(post.id) %>" class="btn btn-primary">Edit</a>
+    <%= link_to 'Delete', post, method: :delete, class:"btn btn-danger" %>
+    <a href="<%= post_path(post.id) %>">Show</a>
+    </div>
+    <p>updated at: <%= post.updated_at %></p>
+</div>
+</div>
+<% end %> 
